@@ -1,0 +1,80 @@
+PUBLICANDO APP IONIC NA WEB
+
+Siga estes passos para publicar o aplicativo na Internet, na forma de um Site
+da Web.
+
+Vamos usar o serviço de hospedagem de sites do GitHub.com (Github Pages) para 
+hospedar o aplicativo. Vamos aos passos:
+
+
+1) Preparando a hospedagem:
+
+ • Logue-se no site "http://guithub.com";
+ • Localize o repositório do aplicativo na sua conta GitHub.com;
+ • Clique na opção "Settings" no menu superior do repositório;
+ • Role a tela e localize a seção "GitHub Pages";
+ • Em "Source", altere o valor de "None" para "master" (ou main);
+ • Ao lado, selecione "/docs";
+ • Clique em [Save];
+ • Quando a página recarregar, retorne à seção "GitHub Pages";
+ • Copie o endereço ao lado de "Your site is ready to be published at". 
+   Exemplo:
+
+    https://luferat.github.io/Poli_2019_1_Projeto5/  --> Termina com "/"
+               |                     |
+               |                     +--> Nome do projeto.
+               +--> Seu nome de usuário GitHub.
+
+ • Salve este endereço em algum lugar, em um arquivo TXT, por exemplo.
+
+
+2) Preparando a aplicativo:
+
+ • Faça os ajustes finais e teste a aplicativo localmente
+   (http://localhost:8100/);
+ • Interrompa o aplicativo no "Node.js command prompt":
+ 
+    [Ctrl]+[C] ... [S] ... [Enter]
+ 
+ • Comande no mesmo "Node.js command prompt":
+
+    ionic build
+
+ • Observe que foi criado um subdiretório "www" no diretório do aplicativo;
+ • Renomeie "www" para "docs";
+ • Abra "docs" no editor, localize e abra "index.html";
+ • Localize a linha abaixo:
+
+    <base href="/"/>
+
+ • Troque o valor de "href" para o endereço obtido do GitHub Pages. Exemplo:
+
+    <base href="https://luferat.github.io/Poli_2019_1_Projeto5/"/>
+                                                              |
+                                         Termina com "/" <----+
+
+    * Observe que o endereço termina com "/"
+ 
+ • Salve e feche o arquivo "index.html".
+
+
+3) Publicando:
+
+ • Abra o "GitHub Desktop" e logue-se com sua conta do GitHub.com;
+ • Acesse o projeto no "GitHub Desktop";
+ • Faça "commit" das alterações;
+ • Clique em [Push] para publicar as alterações.
+
+
+4) Testando: 
+
+ • Aguarde uns 30 segundos (talvez mais) e acesse o endereço do seu app pelo 
+   navegador. Exemplo:
+
+    https://luferat.github.io/Poli_2019_1_Projeto5/
+
+
+5) Conclusão:
+
+ • É importante que, toda vez que fizer alterações no aplicativo, que repita os
+   passos "2", "3" e "4".

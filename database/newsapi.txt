@@ -1,0 +1,8 @@
+﻿URL da API
+
+https://newsapi.org/v2/everything?apiKey=APIKEY&source=google-news-br&language=pt&q=QUERY
+
+ • Obtenha APIKEY de https://newsapi.org/ gratuitamente.
+ • QUERY é uma palavra chave para buscar notícias.
+
+Key do fessô: f6b1d5dc3f4c47c483446e353984603f

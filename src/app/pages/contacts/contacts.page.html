@@ -1,0 +1,106 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Faça Contato</ion-title>
+    <ion-img slot="end" class="toplogo" src="assets/logo_01.png"></ion-img>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding-horizontal">
+
+  <div class="ion-text-center ion-margin-top">
+    <img src="assets/contacts.png" alt="Faça Contato">
+  </div>
+
+  <p>Preencha o formulário abaixo para entrar em contato com o "Munecos".</p>
+
+  <form [formGroup]="contactForm" (ngSubmit)="contactSend()">
+
+    <ion-list lines="full" class="ion=no-padding">
+
+      <ion-item>
+        <ion-label form="name" position="floating" color="primary">
+          Nome:
+
+          <!-- Exibe feedback para o nome -->
+          <ion-text color="danger" *ngIf="contactForm.controls.name.errors">
+            <small *ngIf="contactForm.controls.name.errors.required">* Obrigatório</small>
+            <small *ngIf="contactForm.controls.name.errors.minlength">* Inválido</small>
+          </ion-text>
+
+        </ion-label>
+        <ion-input type="text" name="name" id="name" formControlName="name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label form="email" position="floating" color="primary">
+          E-mail:
+
+          <!-- Exibe feedback para o e-mail -->
+          <ion-text color="danger" *ngIf="contactForm.controls.email.errors">
+            <small *ngIf="contactForm.controls.email.errors.required">* Obrigatório</small>
+            <small *ngIf="contactForm.controls.email.errors.email">* Inválido</small>
+          </ion-text>
+
+        </ion-label>
+        <ion-input type="text" name="email" id="email" formControlName="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label form="subject" position="floating" color="primary">
+          Assunto:
+
+          <!-- Exibe feedback para o assunto -->
+          <ion-text color="danger" *ngIf="contactForm.controls.subject.errors">
+            <small *ngIf="contactForm.controls.subject.errors.required">* Obrigatório</small>
+            <small *ngIf="contactForm.controls.subject.errors.minlength">* Inválido</small>
+          </ion-text>
+
+        </ion-label>
+        <ion-input type="text" name="subject" id="subject" formControlName="subject"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label form="message" position="floating" color="primary">
+          Mensagem:
+
+          <!-- Exibe feedback para o Mensagem -->
+          <ion-text color="danger" *ngIf="contactForm.controls.message.errors">
+            <small *ngIf="contactForm.controls.message.errors.required">* Obrigatório</small>
+            <small *ngIf="contactForm.controls.message.errors.minlength">* Inválido</small>
+          </ion-text>
+
+        </ion-label>
+        <ion-textarea type="text" name="message" id="message" formControlName="message" autoGrow="true"></ion-textarea>
+      </ion-item>
+
+    </ion-list>
+
+    <ion-button type="submit" expand="block" [disabled]="contactForm.invalid" class="ion-margin-vertical">
+      Enviar
+    </ion-button>
+
+  </form>
+
+  <ion-item-divider></ion-item-divider>
+
+  <ion-grid>
+    <ion-row class="ion-text-center">
+      <ion-col>
+        <ion-icon name="logo-facebook" size="large" (click)="openSocial('facebook')"></ion-icon>
+      </ion-col>
+      <ion-col>
+        <ion-icon name="logo-youtube" size="large" (click)="openSocial('youtube')"></ion-icon>
+      </ion-col>
+      <ion-col>
+        <ion-icon name="logo-twitter" size="large" (click)="openSocial('twitter')"></ion-icon>
+      </ion-col>
+      <ion-col>
+        <ion-icon name="logo-github" size="large" (click)="openSocial('github')"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
